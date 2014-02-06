@@ -541,7 +541,7 @@ function onLoadData(data, insert) {
 			//IMAGE CONTAINER
 				html += '<div class="image touch-off">';
 			//OPTIONS
-					if (authUserO.id){
+					if (authUserO.id !== 'anon'){
 					//was used to toggle options//html += '<div class="pin-options-btn touch-off hide"><i id="optionsBtn" class="icon-cog"data-state="False" title="Show Options"></i></div>';
 					html += '<div class="pin-options">';
 			//PIN OPTIONS BUTTON
