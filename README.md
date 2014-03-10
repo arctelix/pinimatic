@@ -21,7 +21,7 @@ Note: On Ubuntu you can get the build deps by running
 
 ### 2) Installation:
 
-    $ git clone git://github.com/overshard/Pinimatic.git
+    $ git clone git://github.com/arctelix/Pinimatic.git
     $ cd Pinimatic
     $ virtualenv .
     $ Scripts\activate (activate your virtual env)
