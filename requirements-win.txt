@@ -18,4 +18,3 @@ gunicorn==0.17.2
 requests-oauthlib
 django-generic-aggregation
 django-picklefield
-psycopg2==2.5
