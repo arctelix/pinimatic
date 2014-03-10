@@ -91,6 +91,8 @@ Initilize the database (everybody):
 Run the server on port 5000 unless you changed it in settings:
 
     $ python manage.py runserver 0.0.0.0:5000
+    
+NOTE: If you are installing with an existing database for pinimatic and have a migration fail because it exists already , then fake the migration ex: ```$ ./manage.py migrate appname xxxx --fake```
 
 ### 5) Quick Settings
 
