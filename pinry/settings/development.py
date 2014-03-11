@@ -1,7 +1,10 @@
 #manage.py uses RACK_ENV to determine the settings file to use
 #from pinry.settings.settings import *
 from pinry.settings import *
-from pinry.settings.env import *
+try:
+    from pinry.settings.env import *
+except:
+    raise Exception("You are missing settings/env.py, this file is required to the program. See the readme for more information.")
 import os
 
 print '--Development Settings Loading'
@@ -26,7 +29,7 @@ DATABASES = {
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'pinimatic',
+    'NAME': 'pinimatic2',
     'HOST': 'localhost',
     'PORT': 5432,
     'USER': 'postgres',

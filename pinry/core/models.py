@@ -17,11 +17,15 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
 
+#prevent syncdb errors
+try:
+    site = Site.objects.get_current()
+    site_name = site.name
+    site_url = 'http://%s/' % site.domain
+except:
+    from django.db import connection
+    connection.close()
 
-
-site = Site.objects.get_current()
-site_name = site.name
-site_url = 'http://%s/' % site.domain
 
 #REFERENCE: notification.send(users, label, extra_context=None, sender=None)
 #           send_observation_notices_for(observed, label, xcontext=None, exclude=None)
