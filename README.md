@@ -73,22 +73,24 @@ staging environment. You must configure heroku the same as above with the follow
 ### 4) Install requirements and initilize the database:
 
 NOTE: If you are useing postgreSQL (default), you must make sure you have postreSQL on your system environment variable PATH.
-If you are not useing postgreSQL and do not have postgreSQL configured on your system pip will fail when installing psycopg2==2.5, everything should be fine though.  To avoid this, you can remove psycopg2==2.5 from the aproriate requirements file before installing.
 
-Install requirements for windows: 
+***Install requirements for windows:***
+NOTE: If you ARE useing postgreSQL and do not have postgreSQL configured on your system install it now. You will have to manually coppy psycopg2 into lib/site-packages.  [HERE][4] is more info.
+
 
     $ pip install -r requirements-win.txt
     
-Install requirements for all other operating systems:
+***Install requirements for all other operating systems:***
+NOTE: If you are not useing postgreSQL and do not have postgreSQL configured on your system pip will fail when installing psycopg2==2.5. To avoid this, you can remove psycopg2==2.5 from requirements.txt before installing.
 
     $ pip install -r requirements.txt
 
-Initilize the database (everybody):
+***Initilize the database (everybody):***
 
     $ python manage.py syncdb
     $ python manage.py migrate
     
-Run the server on port 5000 unless you changed it in settings:
+***Run the server on port 5000 unless you changed it in settings:***
 
     $ python manage.py runserver 0.0.0.0:5000
     
@@ -189,3 +191,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [1]: http://www.wookmark.com/
 [2]: https://github.com/overshard/pinry
 [3]: https://www.stunnel.org/index.html
+[4]: http://www.stickpeople.com/projects/python/win-psycopg/index.2.5.1.html
