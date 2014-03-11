@@ -29,7 +29,7 @@ DATABASES = {
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'pinimatic2',
+    'NAME': 'pinimatic',
     'HOST': 'localhost',
     'PORT': 5432,
     'USER': 'postgres',
