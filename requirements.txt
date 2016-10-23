@@ -19,3 +19,4 @@ requests-oauthlib
 django-generic-aggregation
 django-picklefield
 psycopg2==2.5
+python-dotenv==0.6.0

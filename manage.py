@@ -3,6 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
+
     if 'RACK_ENV' in os.environ:
         RACK_ENV = os.environ.get("RACK_ENV")
         print 'RACK_ENV: ', RACK_ENV

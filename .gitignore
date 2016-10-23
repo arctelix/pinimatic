@@ -15,6 +15,10 @@
 thumbs.db
 *.bak
 env.py
+.env
 
-
-
+.Python
+.idea/
+pinry/.DS_Store
+pinry/settings/.DS_Store
+pip-selfcheck.json

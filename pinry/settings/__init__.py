@@ -31,8 +31,11 @@ Required for development server only
 HTTP_DEV_PORT = '5000'
 HTTPS_DEV_PORT= '5443'
 HTTPS_SUPPORT = True
-"""SECURITY WARNING: If the headder specified in SECURE_PROXY_SSL_HEADER is not supported on your production 
-server you must limit this settings value to the developemnt environment ONLY!!!!"""
+
+"""
+SECURITY WARNING: If the headder specified in SECURE_PROXY_SSL_HEADER is not supported on your production
+server you must limit this settings value to the developemnt environment ONLY!!!!
+"""
 #For request.is_secure() with heroku & dev server
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #These paths will be forced to HTTPS and all others will be forced to HTTP

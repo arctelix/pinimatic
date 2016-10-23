@@ -286,3 +286,4 @@ def format_tags_list(value):
     except ValueError:
         print '****CustomTagField ValueError'
         return False
+

@@ -1,6 +1,7 @@
 #manage.py uses RACK_ENV to determine the settings file to use
 from pinry.settings import *
 import os
+import urlparse
 
 print '--Production Settings Loading'
 
@@ -19,15 +20,16 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 SEND_TEST_EMAIL = True
 
-#HEROKU
+db_url = urlparse.urlparse(os.environ["DATABASE_URL"])
+
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.environ.get("DB_NAME"),
-    'HOST': 'ec2-54-243-243-204.compute-1.amazonaws.com',
-    'PORT': 5432,
-    'USER': os.environ.get("DB_USER"),
-    'PASSWORD': os.environ.get("DB_PASSWORD"),
+    'NAME': db_url.path[1:],
+    'HOST': db_url.hostname,
+    'PORT': db_url.port,
+    'USER': db_url.username,
+    'PASSWORD': db_url.password,
   }
 }
 
@@ -41,7 +43,6 @@ HOST_NAME = os.environ.get('HOST_NAME')
 SITE_URL = 'http://'+HOST_NAME
 SSL_SITE_URL = 'https://'+HOST_NAME
 """
-print 'DB_NAME: ', os.environ.get("DB_NAME")
 
 DEFAULT_FILE_STORAGE = 'pinry.settings.s3utils.MediaS3BotoStorage'
 STATICFILES_STORAGE = 'pinry.settings.s3utils.StaticS3BotoStorage'
