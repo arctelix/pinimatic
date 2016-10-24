@@ -18,7 +18,7 @@ INVITATIONS_PER_USER = 0
 #EMAIL
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-SEND_TEST_EMAIL = True
+SEND_TEST_EMAIL = False
 
 db_url = urlparse.urlparse(os.environ["DATABASE_URL"])
 

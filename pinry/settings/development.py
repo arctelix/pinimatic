@@ -62,6 +62,11 @@ DATABASES = {
   }
 }
 
+ADMINS = [('admin', os.environ.get("EMAIL_HOST_USER"))]
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+SEND_TEST_EMAIL = True
+
 # Use remote storage for remote database
 if not DATA_SOURCE or DATA_SOURCE != 'DEVELOPMENT':
 
